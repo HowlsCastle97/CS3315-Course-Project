@@ -1,0 +1,25 @@
+# CS3315 Bird Classification — Python dependencies
+#
+# BEST PRACTICE: regenerate this file from YOUR working environment, which is
+# already known to produce the reported results:
+#
+#     conda activate birds
+#     pip freeze > requirements.txt
+#
+# The pins below are known-compatible minimums for the APIs this project uses.
+# The torchvision pin is the critical one: the notebook calls
+# models.ResNet50_Weights.IMAGENET1K_V1, which does not exist before 0.13.
+
+torch>=1.12
+torchvision>=0.13          # REQUIRED: weights-enum API used by build_resnet50()
+numpy>=1.21
+scipy>=1.7                 # scipy.special.softmax
+scikit-learn>=1.0          # f1_score (macro)
+matplotlib>=3.4
+Pillow>=9.0
+tqdm>=4.60
+adversarial-robustness-toolbox>=1.13   # PGD, SquareAttack, FeatureCollisionAttack, PyTorchClassifier
+
+# Only needed to execute the .ipynb non-interactively / convert it to .py:
+jupyter>=1.0
+nbconvert>=6.0
